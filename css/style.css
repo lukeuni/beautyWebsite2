@@ -176,14 +176,14 @@ a:hover
 .section1{
     grid-area: section1;
     height: 100vh;
-    width: auto;
+    width: 100vw;
     background-color: #1D2031;
 }
 .section1 img{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 160px;  
+    padding-top: 150px;  
     height: 60%;
     width: auto;
 }
@@ -238,7 +238,8 @@ a:hover
     ;  
     }
     .section1 img{
-        height: 100%;
+        height: 80%;
         width: auto;
+        padding-top: 110px;
     }
 }
