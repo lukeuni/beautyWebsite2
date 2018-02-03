@@ -190,7 +190,7 @@ a:hover
 .section2{
     grid-area: section2;
     height: 100vh;
-    background-image: url(/assets/HATS.png);
+    background-image: url(../assets/HATS.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position:center;
