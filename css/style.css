@@ -190,7 +190,7 @@ a:hover
 .section2{
     grid-area: section2;
     height: 100vh;
-    background-color: #fff;
+    background-color: red;
 }
 .section3{
     grid-area: section3;
