@@ -1,0 +1,238 @@
+body{
+    margin: 0;
+}
+
+/* Hamburger menu start */
+
+a{
+  text-decoration: none;
+  color: #ffffff;
+  
+  transition: color 0.3s ease;
+}
+
+a:hover
+{
+  color: #FFD240;
+}
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 35px;
+  left: 50px;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+  width: 10%;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -8px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+
+
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #2F3440;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: white;
+}
+
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu
+{
+  position: absolute;
+  width: 200px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  height: 100vh; 
+  background: #C4AA84;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 1px;
+  font-size: 15px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+/* Hamburger menu end */
+
+/*  logo top right. */
+
+.logo img {
+
+    display: inline-block;
+    vertical-align: middle;
+    width: 90px;
+    height: auto;
+    cursor: pointer;
+    margin: 0px;
+    float: right;
+}
+
+
+/* White sticky nav bar scrolls and places a drop shadow */
+
+.nav {
+
+    margin-bottom: 10px;
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    background-color: white;
+    z-index: 10;
+}
+.nav h1{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    font-family: nevis;
+    
+}
+.grid{
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "section1 section1 section1 section1 section1 section1 section1 section1 section1 section1 section1 section1"
+        "section2 section2 section2 section2 section2 section2 section2 section2 section2 section2 section2 section2"
+        "section3 section3 section3 section3 section3 section3 section3 section3 section3 section3 section3 section3"
+        "section4 section4 section4 section4 section4 section4 section4 section4 section4 section4 section4 section4"
+        "section5 section5 section5 section5 section5 section5 section5 section5 section5 section5 section5 section5"
+        "section6 section6 section6 section6 section6 section6 section6 section6 section6 section6 section6 section6"
+        "section7 section7 section7 section7 section7 section7 section7 section7 section7 section7 section7 section7";
+}
+.section1{
+    grid-area: section1;
+    height: 100vh;
+    width: 100vw;
+    background-color: #1D2031;
+}
+.section1 img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 80px;  
+}
+.section2{
+    grid-area: section2;
+    height: 100vh;
+    background-color: #fff;
+}
+.section3{
+    grid-area: section3;
+    height: 20em;
+    background-color: blue;
+}
+.section4{
+    grid-area: section4;
+    height: 20em;
+    background-color: purple;
+}
+.section5{
+    grid-area: section5;
+    height: 20em;
+    background-color: orange;
+}
+.section6{
+    grid-area: section6;
+    height: 20em;
+    background-color: black;
+}
+.section7{
+    grid-area: section7;
+    height: 20em;
+    background-color: grey;
+}
+
+
+@media screen and (min-width: 736px) {
+    
+ 
+    .grid {
+        
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+        "section1 section1 section1 section1 section1 section1 section1 section1 section1 section1 section1 section1"
+        "section2 section2 section2 section2 section2 section2 section2 section2 section2 section2 section2 section2"
+        "section3 section3 section3 section3 section3 section3 section3 section3 section3 section3 section3 section3"
+        "section4 section4 section4 section4 section4 section4 section4 section4 section4 section4 section4 section4"
+        "section5 section5 section5 section5 section5 section5 section5 section5 section5 section5 section5 section5"
+        "section6 section6 section6 section6 section6 section6 section6 section6 section6 section6 section6 section6"
+        "section7 section7 section7 section7 section7 section7 section7 section7 section7 section7 section7 section7";
+    ;  
+    }
+}
